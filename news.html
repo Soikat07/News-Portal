@@ -6,6 +6,8 @@
     <title>News Portal</title>
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- font awesome link -->
+    <script src="https://kit.fontawesome.com/e52eb25679.js" crossorigin="anonymous"></script>
   </head>
   <body class="" style="background-color: #e3dfdf" onload="loadCatagories()">
      <header class="container-fluid m-0 p-0">
@@ -50,11 +52,73 @@
         </header>
         <!-- main section stats -->
         <main>
+          <!-- Alert section -->
           <section class="container my-4">
                <div class="alert alert-light" role="alert">
                     <span id="news-count">0</span> items found for category <span id="categories-name"></span>
                   </div>
           </section>
+          <!-- Shorting section -->
+          <section class="container d-flex justify-content-between my-4" id="">
+               <div class="d-flex justify-content-center align-items-center gap-2">
+                 <p class="p-0 m-0">Sort By:</p>
+       
+                 <div>
+                   <select
+                     class="form-select"
+                     id="floatingSelect"
+                     aria-label="Floating label select example"
+                   >
+                     <option selected>Default</option>
+                     <option value="1">One</option>
+                     <option value="2">Two</option>
+                     <option value="3">Three</option>
+                   </select>
+                 </div>
+               </div>
+               <div class="d-flex gap-2">
+                 <button class="btn btn-primary" onclick="showTodaysPick()">Todays pick</button>
+                 <button class="btn btn-outline-secondary" onclick="showTrending()">Trending</button>
+               </div>
+             </section>
+             <!-- all news section -->
+             <section class="all-news container" id="all-news">
+             </section>
+  <!-- Modal -->
+      <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Here are the Full News
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal ends -->
         </main>
         <!-- main section end -->
 
